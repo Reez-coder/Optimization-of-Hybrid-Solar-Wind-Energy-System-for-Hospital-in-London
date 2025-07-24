@@ -131,7 +131,7 @@ $$
 
 - Population Size: 500  
 - Max Generations: 10,000  
-- Function Tolerance: $$ \(10^{-12}\) $$  
+- Function Tolerance: $$\(10^{-12}\)$$  
 - Constraint Tolerance: $$\(10^{-3}\)$$
 
 The **genetic algorithm** (`ga()`) used to find the optimal configuration is as seen below:
