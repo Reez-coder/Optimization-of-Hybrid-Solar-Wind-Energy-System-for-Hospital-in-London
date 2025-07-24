@@ -16,14 +16,6 @@ This system is optimized using a **Genetic Algorithm (GA)** to determine the opt
 
 The optimization procedure also integrates a financial analysis to evaluate the feasibility and payback period of the system based on energy savings and export revenues via the Smart Export Guarantee (SEG) scheme.
 
-## Project Methodology
-- Real-world data integration (irradiance, temperature, wind, and load)
-- Physical modeling of solar, wind, and battery systems
-- Control system design taking into consideration the battery limit and excess power exportation
-- Cost and economic analysis (CAPEX + OPEX)
-- Constrained multi-variable optimization
-- Visual analytics of system behavior and energy flows
-
 ## System Specifications
 
 ### 1. Solar PV System
@@ -157,6 +149,37 @@ By running `plottedfigures.py`, the following results were obtained:
 |------------|-----------------|
 | ![](SystemOperationpermonthinaTypicalYear.jpg)<br><br>**Fig 1**: System Operation per Month in a Typical Year | **Key Observations**: <br> - **PV Output**: Peaks at 600 kW in summer, drops below 100 kW in winter. <br> - **Wind Power**: Stays stable between 50–150 kW, compensating for solar fluctuations. <br> - **Battery Storage**: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging when demand exceeds supply. <br> - **Exported Power**: Ranges from 400–600 kW, with significant export in summer. <br> - **Unsupplied Load**: Remains near zero, indicating optimal system sizing. |
 
+| **Year** | **Cash Flow** | **Cumulative Cash Flow** |
+|----------|---------------|--------------------------|
+| 0        | $(1,803,400.00) | $(1,803,400.00)           |
+| 1        | $310,107.52     | $(1,493,292.48)           |
+| 2        | $317,860.21     | $(1,175,432.26)           |
+| 3        | $325,806.72     | $(849,625.55)             |
+| 4        | $333,951.89     | $(515,673.66)             |
+| 5        | $342,300.68     | $(173,372.98)             |
+| 6        | $350,858.20     | $177,485.22               |
+| 7        | $359,629.65     | $537,114.87               |
+| 8        | $368,620.40     | $905,735.27               |
+| 9        | $377,835.91     | $1,283,571.18             |
+| 10       | $387,281.80     | $1,670,852.98             |
+
+**TIR**: 0.1348  
+**Payback Period (Years)**: 6  
+**Total Benefits**: €1,670,852.98
+### **Optimization Results**
+
+The optimization results indicate an optimal configuration for the renewable energy system, balancing **cost efficiency** and **energy supply reliability**. The solution provides the following key component capacities:
+
+- **PV Panels**: 2,504 units (1.21 MW)
+- **Wind Turbines**: 530 units (1.06 MW)
+- **Battery Storage**: 304 units (1.39 MWh)
+- **Final State of Charge (SOC)**: 0.65
+
+#### **Key Insights**:
+- The **total system cost** is **€1.824 million**.
+- The system ensures **adequate energy generation** while maintaining **cost-effectiveness**.
+- **Solar energy** is the primary source of energy, with **wind turbines** and **battery storage** playing complementary roles to ensure energy security and grid independence.
+- The **unsupplied power** remains **zero**, and the **SOC** of the battery does not fall below 0.5, respecting the **battery management system (BMS)** constraints.
 
 
 ## Steps to Run the Project
@@ -170,12 +193,13 @@ The optimization model is implemented in MATLAB and follows these steps:
    - Constraints include meeting energy load requirements, staying within battery SOC limits, and respecting available land area for installation.
 5. **Results:** The model outputs the best configuration of the system, along with financial metrics like payback period and internal rate of return (IRR).
 
-### Prerequisites:
-- MATLAB (R2020b or later)
-- MATLAB Optimization Toolbox (for Genetic Algorithm)
-- Data files (dailydata12monthsaverage.csv, wind_speed.txt, load3.txt, etc.)
+### Credits:
+Team:
+Rashida Olomowewe, Walmy Fernández, Morris Nyantee,Vanesa Delgado
 
-### Steps:
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/hybrid-energy-system.git
+### 📜License
+This project is academic and part of the 2025 coursework on Optimal design of renewable enrgy system for Masters in Decentralized Smart Energy Systems at the Universite de Lorrraine- Master Energie
+
+### Please contact the authors before any commercial use.
+
+
