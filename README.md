@@ -104,7 +104,9 @@ $$
 
 - The **upper bounds (`Xu`)** are:
   $$
+  \begin{aligned}
   X_u = [ N_{\text{pv,max}}, N_{\text{cell,max}}, N_{\text{turb,max}}, SOC_{\text{ini,max}} ]
+  \end{aligned}
   $$
   
 ### Inequality Constraints
