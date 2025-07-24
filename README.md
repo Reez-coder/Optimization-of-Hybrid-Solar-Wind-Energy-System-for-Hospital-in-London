@@ -44,7 +44,7 @@ The optimization procedure also integrates a financial analysis to evaluate the 
 
 ## Optimization Methodology
 
-##  Model Inputs
+###   Model Inputs
 
 **Time Resolution:**
 
@@ -60,15 +60,15 @@ $$
 
 ---
 
-## System Equations
+###  System Equations
 
-### PV Output
+####  PV Output
 
 $$
 P_{\text{PV}}(t) = N_{\text{pv}} \cdot \eta_{\text{PV}} \cdot \frac{P_{\text{STC}}}{G_{\text{STC}}} \cdot \left(1 + C_T(T(t) - T_{\text{STC}})\right) \cdot G(t) \cdot (1 - r_{\text{deg}})^{y-1}
 $$
 
-###  Wind Turbine Output
+####   Wind Turbine Output
 
 $$
 P_{\text{wind}}(t) = N_{\text{turb}} \cdot \left( A + B \cdot v(t) + C \cdot v(t)^2 \right) \cdot P_{\text{turb}}
@@ -76,7 +76,7 @@ $$
 
 Where \( A, B, C \) are constants computed from cut-in \(v_{ci} = 2.5\) and rated speed \(v_r = 10\).
 
-### Battery State of Charge (SOC)
+####  Battery State of Charge (SOC)
 
 $$
 SOC(t+1) = SOC(t) + \frac{\eta_{\text{bat}} \cdot P_{\text{bat}}(t) \cdot \Delta T}{N_{\text{cell}} \cdot C_{\text{cell}}}
@@ -104,7 +104,7 @@ $$
 
 ---
 
-## 🎯 Objective Function
+## Objective Function
 
 Minimize total cost over 10 years:
 
