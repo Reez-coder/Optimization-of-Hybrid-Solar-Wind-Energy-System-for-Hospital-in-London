@@ -192,7 +192,6 @@ The optimization of the renewable energy system produced the following key resul
 - **Solar energy** is the primary source of energy, with **wind turbines** and **battery storage** playing complementary roles to ensure energy security and grid independence.
 - The **unsupplied power** remains **zero**, and the **SOC** of the battery does not fall below 0.5, respecting the **battery management system (BMS)** constraints.
 
-
 ## Steps to Run the Project
 The optimization model is implemented in MATLAB and follows these steps:
 1. **Input Data:** Load the hospital's energy load profile, solar irradiance, wind speed, and temperature data.
@@ -203,13 +202,13 @@ The optimization model is implemented in MATLAB and follows these steps:
    - Minimize the total system investment cost, including both capital and operational expenses.
    - Constraints include meeting energy load requirements, staying within battery SOC limits, and respecting available land area for installation.
 5. **Results:** The model outputs the best configuration of the system, along with financial metrics like payback period and internal rate of return (IRR).
-
+   
 ### Credits:
 Team:
 Rashida Olomowewe, Walmy Fernández, Morris Nyantee,Vanesa Delgado
 
 ### 📜License
-This project is academic and part of the 2025 coursework on Optimal design of renewable enrgy system for Masters in Decentralized Smart Energy Systems at the Universite de Lorrraine- Master Energie
+This project is academic and part of the 2025 coursework on **Optimal design of renewable enrgy system for Masters in Decentralized Smart Energy Systems at the Universite de Lorrraine- Master Energie**
 
 ### Please contact the authors before any commercial use.
 
