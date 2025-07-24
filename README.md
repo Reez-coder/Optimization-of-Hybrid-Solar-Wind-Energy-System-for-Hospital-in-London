@@ -103,8 +103,6 @@ $$
 X_l = [1, \, N_{\text{cell,min}}, \, N_{\text{turb,min}}, \, SOC_{\text{ini,min}}]
 $$
 
-- The **upper bounds (`Xu`)** are:
-
 $$
 X_u = [N_{\text{pv,max}}, \, N_{\text{cell,max}}, \, N_{\text{turb,max}}, \, SOC_{\text{ini,max}}]
 $$
