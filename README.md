@@ -58,8 +58,6 @@ $$
 P_{\text{load}}(t) = P_{\text{load,raw}}(t) \cdot (1 + g)^{y}, \quad g = 0.025, \quad y = 10
 $$
 
----
-
 ###  System Equations
 
 ####  PV Output
@@ -102,17 +100,14 @@ $$
 P_{\text{total}} = \eta_{\text{DCDC}} \cdot P_{\text{PV}}(t) + \eta_{\text{ACDCw}} \cdot P_{\text{wind}}(t)
 $$
 
----
-
 ## Objective Function
 
 Minimize total cost over 10 years:
 
 $$
-C(X) = N_{\text{pv}} (C_{\text{inv,panel}} + OPEX_{\text{PV}}) + N_{\text{cell}} (C_{\text{inv,cell}} + OPEX_{\text{Battery}}) + N_{\text{turb}} (C_{\text{inv,turb}} + OPEX_{\text{Wind}})
+C(X) = min (N_{\text{pv}} (C_{\text{inv,panel}} + OPEX_{\text{PV}}) + N_{\text{cell}} (C_{\text{inv,cell}} + OPEX_{\text{Battery}}) + N_{\text{turb}} (C_{\text{inv,turb}} + OPEX_{\text{Wind}}))
 $$
 
----
 
 ## Constraints
 
@@ -137,8 +132,6 @@ $$
 SOC_{\text{min}} &\leq SOC_{\text{init}} \leq SOC_{\text{max}}
 \end{aligned}
 $$
-
----
 
 ## Optimization Method
 
