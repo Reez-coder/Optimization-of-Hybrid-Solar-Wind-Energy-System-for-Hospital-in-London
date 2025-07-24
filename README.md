@@ -185,8 +185,6 @@ The optimization of the renewable energy system produced the following key resul
 - **Battery Storage**: 304 units (1.39 MWh)
 - **Final State of Charge (SOC)**: 0.65
 
-These results indicate an optimal system configuration that effectively balances **cost efficiency** and **energy supply reliability**. The design prioritizes **solar energy** as the primary source, while **wind turbines** and **battery storage** enhance the system's reliability and grid independence. The system also ensures that **unsupplied power** remains **zero**, and the **battery SOC** does not fall below **0.5**, in line with **Battery Management System (BMS)** constraints.
-
 
 #### **Key Insights**:
 - The **total system cost** is **€1.824 million**.
