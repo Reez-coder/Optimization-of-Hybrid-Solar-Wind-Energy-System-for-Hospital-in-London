@@ -97,16 +97,16 @@ $$
 
 ## Constraints
 ### **Lower and Upper Bounds**
-
 - The **lower bounds (`Xl`)** are:
   $$
-  X_l = \begin{bmatrix} 1 \\ N_{\text{cell,min}} \\ N_{\text{turb,min}} \\ SOC_{\text{ini,min}} \end{bmatrix}
+  X_l = [ 1, N_{\text{cell,min}}, N_{\text{turb,min}}, SOC_{\text{ini,min}} ]
   $$
 
 - The **upper bounds (`Xu`)** are:
   $$
-  X_u = \begin{bmatrix} N_{\text{pv,max}} \\ N_{\text{cell,max}} \\ N_{\text{turb,max}} \\ SOC_{\text{ini,max}} \end{bmatrix}
+  X_u = [ N_{\text{pv,max}}, N_{\text{cell,max}}, N_{\text{turb,max}}, SOC_{\text{ini,max}} ]
   $$
+  
 ### Inequality Constraints
 
 $$
