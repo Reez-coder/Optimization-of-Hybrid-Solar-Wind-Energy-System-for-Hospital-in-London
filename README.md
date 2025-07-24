@@ -80,21 +80,7 @@ $$
 SOC(t+1) = SOC(t) + \frac{\eta_{\text{bat}} \cdot P_{\text{bat}}(t) \cdot \Delta T}{N_{\text{cell}} \cdot C_{\text{cell}}}
 $$
 
-Battery charge/discharge power:
-
-- **If surplus:**
-
-$$
-P_{\text{bat}}(t) = -\eta_{\text{DCDC}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
-$$
-
-- **If deficit:**
-
-$$
-P_{\text{bat}}(t) = -\frac{1}{\eta_{\text{DCDC}}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
-$$
-
-With:
+### Power Output 
 
 $$
 P_{\text{total}} = \eta_{\text{DCDC}} \cdot P_{\text{PV}}(t) + \eta_{\text{ACDCw}} \cdot P_{\text{wind}}(t)
