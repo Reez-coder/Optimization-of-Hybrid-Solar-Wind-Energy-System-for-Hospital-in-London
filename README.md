@@ -74,7 +74,7 @@ $$
 P_{\text{wind}}(t) = N_{\text{turb}} \cdot \left( A + B \cdot v(t) + C \cdot v(t)^2 \right) \cdot P_{\text{turb}}
 $$
 
-Where \( A, B, C \) are constants computed from cut-in \(v_{ci} = 2.5\) and rated speed \(v_r = 10\).
+Where \( A, B, C \) are constants computed from cut-in $$\(v_{ci} = 2.5\)$$ and rated speed $$\(v_r = 10\)$$.
 
 ####  Battery State of Charge (SOC)
 
