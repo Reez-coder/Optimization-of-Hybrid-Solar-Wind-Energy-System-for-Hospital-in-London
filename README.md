@@ -1,21 +1,17 @@
 # Optimization of Hybrid Solar-Wind Energy System for Hospital in London
 
-[![MATLAB](https://img.shields.io/badge/MATLAB-R2023b-orange)](https://www.mathworks.com/products/matlab.html)
-
-This repository contains a MATLAB-based optimization project focused on designing a hybrid energy system for a hospital. The system integrates solar photovoltaics (PV), wind turbines, and battery storage, aimed at reducing energy costs and minimizing dependency on the grid while ensuring reliable energy supply for critical medical operations.
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2024b-orange)](https://www.mathworks.com/products/matlab.html)
 
 ## Introduction
 
-Hospitals are among the most energy-intensive facilities, requiring continuous and reliable power sources to support medical operations. This project develops an energy optimization model to design a hybrid solar-wind energy system for a hospital located in London, UK. By incorporating solar PV, wind turbines, and battery storage, the goal is to provide a self-sufficient energy system that minimizes grid dependency, reduces operational costs, and supports sustainability goals.
-
-The hybrid system is optimized to meet the hospital's energy demands while maximizing the utilization of renewable energy resources, considering the hospital's daily load profile, environmental conditions, and space constraints.
+This MATLAB-based optimization project designs a **hybrid energy system** for  a hospital located in London, UK, using **solar PV**, **wind turbines**, and **battery storage**. The goal is to minimize **energy costs** and **grid dependency** while ensuring a **reliable power supply** for medical operations.
 
 ## Project Description
 
 This system is optimized using a Genetic Algorithm (GA) to determine the optimal configuration that minimizes the total system investment cost over a 10-year lifetime, while fulfilling the following constraints:
 
 - **SOC Constraints:** The state of charge (SOC) of the battery must remain within 50% to 90%.
-- **Power Supply Constraints:** The system must meet the energy load requirements, with any excess energy being exported.
+- **Power Supply Constraints:** The system must meet the energy load requirements, with excess energy being exported.
 - **Space Constraints:** The total space required for the PV panels and wind turbines must not exceed the usable area of the hospital’s rooftop or nearby land.
 
 The optimization procedure also integrates a financial analysis to evaluate the feasibility and payback period of the system based on energy savings and export revenues via the Smart Export Guarantee (SEG) scheme.
