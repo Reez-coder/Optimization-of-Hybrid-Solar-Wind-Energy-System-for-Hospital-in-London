@@ -144,13 +144,22 @@ $$[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], opti
 
 ## Result and Analysis
 
-By running `plottedfigures.py`, the following results were obtained:
+By running the optimization model, the following results were obtained:
+
+### System Operation per Month in a Typical Year
+
+The system's operation over the course of the year, including energy production and storage behavior, is visualized in **Fig. 1** below:
+
 | **Figure** | **Description** |
 |------------|-----------------|
-| ![](SystemOperationpermonthinaTypicalYear.jpg)<br><br>**Fig 1**: System Operation per Month in a Typical Year | **Key Observations**: <br> - **PV Output**: Peaks at 600 kW in summer, drops below 100 kW in winter. <br> - **Wind Power**: Stays stable between 50–150 kW, compensating for solar fluctuations. <br> - **Battery Storage**: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging when demand exceeds supply. <br> - **Exported Power**: Ranges from 400–600 kW, with significant export in summer. <br> - **Unsupplied Load**: Remains near zero, indicating optimal system sizing. |
+| ![](SystemOperationpermonthinaTypicalYear.jpg)<br><br>**Fig 1**: System Operation per Month in a Typical Year | **Key Observations**: <br> - **PV Output**: Peaks at 600 kW in summer and drops below 100 kW in winter. <br> - **Wind Power**: Maintains a stable range of 50–150 kW, compensating for seasonal solar fluctuations. <br> - **Battery Storage**: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging during periods of excess demand. <br> - **Exported Power**: Ranges from 400–600 kW, with significant export in summer months. <br> - **Unsupplied Load**: Remains close to zero, indicating efficient system sizing. |
 
-| **Year** | **Cash Flow** | **Cumulative Cash Flow** |
-|----------|---------------|--------------------------|
+### Financial Analysis: Cash Flow and Benefits
+
+The financial performance of the system over a 10-year period is as follows:
+
+| **Year** | **Cash Flow**  | **Cumulative Cash Flow** |
+|----------|----------------|--------------------------|
 | 0        | $(1,803,400.00) | $(1,803,400.00)           |
 | 1        | $310,107.52     | $(1,493,292.48)           |
 | 2        | $317,860.21     | $(1,175,432.26)           |
@@ -164,16 +173,20 @@ By running `plottedfigures.py`, the following results were obtained:
 | 10       | $387,281.80     | $1,670,852.98             |
 
 **TIR**: 0.1348  
-**Payback Period (Years)**: 6  
+**Payback Period**: 6 years  
 **Total Benefits**: €1,670,852.98
-### **Optimization Results**
 
-The optimization results indicate an optimal configuration for the renewable energy system, balancing **cost efficiency** and **energy supply reliability**. The solution provides the following key component capacities:
+### Optimization Results
+
+The optimization of the renewable energy system produced the following key results:
 
 - **PV Panels**: 2,504 units (1.21 MW)
 - **Wind Turbines**: 530 units (1.06 MW)
 - **Battery Storage**: 304 units (1.39 MWh)
 - **Final State of Charge (SOC)**: 0.65
+
+These results indicate an optimal system configuration that effectively balances **cost efficiency** and **energy supply reliability**. The design prioritizes **solar energy** as the primary source, while **wind turbines** and **battery storage** enhance the system's reliability and grid independence. The system also ensures that **unsupplied power** remains **zero**, and the **battery SOC** does not fall below **0.5**, in line with **Battery Management System (BMS)** constraints.
+
 
 #### **Key Insights**:
 - The **total system cost** is **€1.824 million**.
