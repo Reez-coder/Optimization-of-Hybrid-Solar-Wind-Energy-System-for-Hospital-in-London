@@ -48,7 +48,7 @@ The optimization procedure also integrates a financial analysis to evaluate the 
 
 ## Optimization Methodology
 
-## 🧮 Model Inputs
+##  Model Inputs
 
 **Time Resolution:**
 
@@ -118,7 +118,7 @@ $$
 
 ---
 
-## 📌 Constraints
+## Constraints
 
 ### Inequality Constraints
 
@@ -144,7 +144,7 @@ $$
 
 ---
 
-## 🧬 Optimization Method
+## Optimization Method
 
 MATLAB’s **Genetic Algorithm** is used to solve:
 
