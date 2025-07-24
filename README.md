@@ -136,7 +136,7 @@ $$
 
 The **genetic algorithm** (`ga()`) used to find the optimal configuration is as seen below:
 
-[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], options)
+$$[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], options)$$
 
 ## Steps to Run the Project
 The optimization model is implemented in MATLAB and follows these steps:
