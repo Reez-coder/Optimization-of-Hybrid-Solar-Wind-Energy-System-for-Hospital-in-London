@@ -12,7 +12,6 @@ The hybrid system is optimized to meet the hospital's energy demands while maxim
 
 ## Project Description
 
-# 🌱 Hybrid Renewable Energy System Optimization
 This system is optimized using a Genetic Algorithm (GA) to determine the optimal configuration that minimizes the total system investment cost over a 10-year lifetime, while fulfilling the following constraints:
 
 - **SOC Constraints:** The state of charge (SOC) of the battery must remain within 50% to 90%.
