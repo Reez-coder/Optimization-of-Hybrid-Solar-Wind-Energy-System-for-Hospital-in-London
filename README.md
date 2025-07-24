@@ -97,6 +97,7 @@ $$
 
 ## Constraints
 ### **Lower and Upper Bounds**
+
 - The **lower bounds (`Xl`)** are:
   $$
   X_l = [ 1, N_{\text{cell,min}}, N_{\text{turb,min}}, SOC_{\text{ini,min}} ]
