@@ -1,5 +1,7 @@
 # Optimization of Hybrid Solar-Wind Energy System for Hospital in London
 
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2023b-orange)](https://www.mathworks.com/products/matlab.html)
+
 This repository contains a MATLAB-based optimization project focused on designing a hybrid energy system for a hospital. The system integrates solar photovoltaics (PV), wind turbines, and battery storage, aimed at reducing energy costs and minimizing dependency on the grid while ensuring reliable energy supply for critical medical operations.
 
 ## Introduction
@@ -10,7 +12,7 @@ The hybrid system is optimized to meet the hospital's energy demands while maxim
 
 ## Project Description
 
-This project involves the design and optimization of a hybrid energy system that includes solar PV, wind turbines, and battery storage. The system is optimized using a Genetic Algorithm (GA) to determine the optimal configuration of PV panels, wind turbines, and battery cells that minimize investment costs while fulfilling the following constraints:
+This system is optimized using a Genetic Algorithm (GA) to determine the optimal configuration of PV panels, wind turbines, and battery cells that minimize investment costs while fulfilling the following constraints:
 
 - **SOC Constraints:** The state of charge (SOC) of the battery must remain within 50% to 90%.
 - **Power Supply Constraints:** The system must meet the energy load requirements, with any excess energy being exported.
