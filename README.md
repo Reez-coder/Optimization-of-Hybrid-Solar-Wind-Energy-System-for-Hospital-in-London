@@ -8,7 +8,7 @@ This MATLAB-based optimization project designs a **hybrid energy system** for  a
 
 ## Project Description
 
-This system is optimized using a Genetic Algorithm (GA) to determine the optimal configuration that minimizes the total system investment cost over a 10-year lifetime, while fulfilling the following constraints:
+This system is optimized using a **Genetic Algorithm (GA)** to determine the optimal configuration that minimizes the total system investment cost over a 10-year lifetime, while fulfilling the following constraints:
 
 - **SOC Constraints:** The state of charge (SOC) of the battery must remain within 50% to 90%.
 - **Power Supply Constraints:** The system must meet the energy load requirements, with excess energy being exported.
@@ -152,6 +152,21 @@ $$[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], opti
 
 ## Result and Analysis
 
+By running `plottedfigures.py`, the following results were obtained:
+
+| **Figure** | **Description** |
+|------------|-----------------|
+| ![](SystemOperationpermonthinaTypicalYear.png)<br><br>**Fig 1**: System Operation per month in a Typical Year | key observations:
+
+PV Output: Peaks at 600 kW in summer, drops below 100 kW in winter.
+
+Wind Power: Remains stable at 50–150 kW, compensating for seasonal solar variations.
+
+Battery Storage: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging when demand exceeds supply.
+
+Exported Power: Ranges from 400–600 kW, with significant export in summer.
+
+Unsupplied Load: Remains close to zero, indicating the system is well-sized. |
 
 
 ## Steps to Run the Project
