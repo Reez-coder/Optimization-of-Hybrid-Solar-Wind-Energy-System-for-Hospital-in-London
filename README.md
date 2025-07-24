@@ -47,67 +47,76 @@ The optimization procedure also integrates a financial analysis to evaluate the 
 
 ## Optimization Methodology
 
+## 🧮 Model Inputs
 
 **Time Resolution:**
-- \(\Delta T = 0.5\) hours (12 days × 24 hours = 288 hours total)
+
+$$
+\Delta T = 0.5 \text{ hr} \quad \text{(12 days × 24 hr = 288 hours)}
+$$
 
 **Scaled Load Profile:**
 
-\[
-P_{\text{load}}(t) = P_{\text{load,raw}}(t) \cdot (1 + g)^{y}, \quad g = 0.025,\quad y = 10
-\]
+$$
+P_{\text{load}}(t) = P_{\text{load,raw}}(t) \cdot (1 + g)^{y}, \quad g = 0.025, \quad y = 10
+$$
 
 ---
 
 ## ⚙️ System Equations
 
-### PV Output
+### ✅ PV Output
 
-\[
+$$
 P_{\text{PV}}(t) = N_{\text{pv}} \cdot \eta_{\text{PV}} \cdot \frac{P_{\text{STC}}}{G_{\text{STC}}} \cdot \left(1 + C_T(T(t) - T_{\text{STC}})\right) \cdot G(t) \cdot (1 - r_{\text{deg}})^{y-1}
-\]
+$$
 
 Where:
+
 - \( P_{\text{STC}} = 485 \, \text{W} \)
 - \( \eta_{\text{PV}} = 0.99 \)
 - \( G_{\text{STC}} = 1000 \, \text{W/m}^2 \)
 - \( T_{\text{STC}} = 25^\circ C \)
-- \( C_T = -0.0029 \, ^\circ C^{-1} \)
+- \( C_T = -0.0029 \)
 - \( r_{\text{deg}} = 0.004448 \)
 
 ---
 
-### Wind Turbine Output
+### ✅ Wind Turbine Output
 
-Based on a quadratic model fitted between cut-in speed \(v_{ci} = 2.5\) and rated speed \(v_r = 10\):
+$$
+P_{\text{wind}}(t) = N_{\text{turb}} \cdot \left( A + B \cdot v(t) + C \cdot v(t)^2 \right) \cdot P_{\text{turb}}
+$$
 
-\[
-P_{\text{wind}}(t) = N_{\text{turb}} \cdot (A + B \cdot v(t) + C \cdot v(t)^2) \cdot P_{\text{turb}}
-\]
-
-Where \( A, B, C \) are constants computed from wind curve parameters.
+Where \( A, B, C \) are constants computed from cut-in \(v_{ci} = 2.5\) and rated speed \(v_r = 10\).
 
 ---
 
-### Battery State of Charge (SOC)
+### ✅ Battery State of Charge (SOC)
 
-\[
+$$
 SOC(t+1) = SOC(t) + \frac{\eta_{\text{bat}} \cdot P_{\text{bat}}(t) \cdot \Delta T}{N_{\text{cell}} \cdot C_{\text{cell}}}
-\]
+$$
 
-Battery is charged or discharged based on surplus or deficit:
+Battery charge/discharge power:
 
-- If surplus:
-  \[
-  P_{\text{bat}}(t) = -\eta_{\text{DCDC}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
-  \]
-- If deficit:
-  \[
-  P_{\text{bat}}(t) = -\frac{1}{\eta_{\text{DCDC}}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
-  \]
+- **If surplus:**
 
-Where:
-- \( P_{\text{total}} = \eta_{\text{DCDC}} \cdot P_{\text{PV}}(t) + \eta_{\text{ACDCw}} \cdot P_{\text{wind}}(t) \)
+$$
+P_{\text{bat}}(t) = -\eta_{\text{DCDC}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
+$$
+
+- **If deficit:**
+
+$$
+P_{\text{bat}}(t) = -\frac{1}{\eta_{\text{DCDC}}} \cdot \left(P_{\text{total}} - \frac{P_{\text{load}}(t)}{\eta_{\text{ACDC}}} \right)
+$$
+
+With:
+
+$$
+P_{\text{total}} = \eta_{\text{DCDC}} \cdot P_{\text{PV}}(t) + \eta_{\text{ACDCw}} \cdot P_{\text{wind}}(t)
+$$
 
 ---
 
@@ -115,9 +124,9 @@ Where:
 
 Minimize total cost over 10 years:
 
-\[
-\min_{X} \quad C(X) = N_{\text{pv}} (C_{\text{inv,panel}} + OPEX_{\text{PV}}) + N_{\text{cell}} (C_{\text{inv,cell}} + OPEX_{\text{Battery}}) + N_{\text{turb}} (C_{\text{inv,turb}} + OPEX_{\text{Wind}})
-\]
+$$
+C(X) = N_{\text{pv}} (C_{\text{inv,panel}} + OPEX_{\text{PV}}) + N_{\text{cell}} (C_{\text{inv,cell}} + OPEX_{\text{Battery}}) + N_{\text{turb}} (C_{\text{inv,turb}} + OPEX_{\text{Wind}})
+$$
 
 Where:
 
@@ -131,35 +140,35 @@ Where:
 
 ### Inequality Constraints
 
-\[
+$$
 \begin{aligned}
 & SOC_{\text{min}} \leq SOC(t) \leq SOC_{\text{max}} \\
 & \max(P_{\text{unsup}}(t)) = 0 \\
 & SOC(0) = SOC(T_{\text{end}}) \\
 & N_{\text{pv}} \cdot A_{\text{pv}} + N_{\text{turb}} \cdot A_{\text{turb}} \leq A_{\text{usable}}
 \end{aligned}
-\]
+$$
 
 ### Variable Bounds
 
-\[
+$$
 \begin{aligned}
 1 &\leq N_{\text{pv}} \leq \left\lfloor \frac{A_{\text{usable}}}{A_{\text{pv}}} \right\rfloor \\
 10 &\leq N_{\text{cell}} \leq 1000 \\
 0 &\leq N_{\text{turb}} \leq \left\lfloor \frac{A_{\text{usable}}}{A_{\text{turb}}} \right\rfloor \\
 SOC_{\text{min}} &\leq SOC_{\text{init}} \leq SOC_{\text{max}}
 \end{aligned}
-\]
+$$
 
 ---
 
 ## 🧬 Optimization Method
 
-We use MATLAB’s **Genetic Algorithm** (`ga`) to solve:
+MATLAB’s **Genetic Algorithm** is used to solve:
 
-\[
-\min_{X \in \mathbb{R}^4} \quad C(X) \quad \text{subject to } c(X) \leq 0
-\]
+$$
+\min_{X \in \mathbb{R}^4} \quad C(X) \quad \text{subject to constraints}
+$$
 
 **GA Settings:**
 
@@ -167,6 +176,9 @@ We use MATLAB’s **Genetic Algorithm** (`ga`) to solve:
 - Max Generations: 10,000  
 - Function Tolerance: \(10^{-12}\)  
 - Constraint Tolerance: \(10^{-3}\)
+
+---
+
 
 The optimization model is implemented in MATLAB and follows these steps:
 1. **Input Data:** Load the hospital's energy load profile, solar irradiance, wind speed, and temperature data.
