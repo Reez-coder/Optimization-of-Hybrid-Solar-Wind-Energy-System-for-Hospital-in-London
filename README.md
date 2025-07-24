@@ -20,14 +20,15 @@ This system is optimized using a Genetic Algorithm (GA) to determine the optimal
 
 The optimization procedure also integrates a financial analysis to evaluate the feasibility and payback period of the system based on energy savings and export revenues via the Smart Export Guarantee (SEG) scheme.
 
- The project includes:
+## Project Methodology
 - Real-world data integration (irradiance, temperature, wind, and load)
 - Physical modeling of solar, wind, and battery systems
+- Control system design taking into consideration the battery limit and excess power exportation
 - Cost and economic analysis (CAPEX + OPEX)
 - Constrained multi-variable optimization
 - Visual analytics of system behavior and energy flows
 
-## System Components
+## System Specifications
 
 ### 1. Solar PV System
 - **Rated Power:** 485W per panel
@@ -63,26 +64,15 @@ $$
 
 ---
 
-## ⚙️ System Equations
+## System Equations
 
-### ✅ PV Output
+### PV Output
 
 $$
 P_{\text{PV}}(t) = N_{\text{pv}} \cdot \eta_{\text{PV}} \cdot \frac{P_{\text{STC}}}{G_{\text{STC}}} \cdot \left(1 + C_T(T(t) - T_{\text{STC}})\right) \cdot G(t) \cdot (1 - r_{\text{deg}})^{y-1}
 $$
 
-Where:
-
-- \( P_{\text{STC}} = 485 \, \text{W} \)
-- \( \eta_{\text{PV}} = 0.99 \)
-- \( G_{\text{STC}} = 1000 \, \text{W/m}^2 \)
-- \( T_{\text{STC}} = 25^\circ C \)
-- \( C_T = -0.0029 \)
-- \( r_{\text{deg}} = 0.004448 \)
-
----
-
-### ✅ Wind Turbine Output
+###  Wind Turbine Output
 
 $$
 P_{\text{wind}}(t) = N_{\text{turb}} \cdot \left( A + B \cdot v(t) + C \cdot v(t)^2 \right) \cdot P_{\text{turb}}
@@ -90,9 +80,7 @@ $$
 
 Where \( A, B, C \) are constants computed from cut-in \(v_{ci} = 2.5\) and rated speed \(v_r = 10\).
 
----
-
-### ✅ Battery State of Charge (SOC)
+### Battery State of Charge (SOC)
 
 $$
 SOC(t+1) = SOC(t) + \frac{\eta_{\text{bat}} \cdot P_{\text{bat}}(t) \cdot \Delta T}{N_{\text{cell}} \cdot C_{\text{cell}}}
@@ -127,12 +115,6 @@ Minimize total cost over 10 years:
 $$
 C(X) = N_{\text{pv}} (C_{\text{inv,panel}} + OPEX_{\text{PV}}) + N_{\text{cell}} (C_{\text{inv,cell}} + OPEX_{\text{Battery}}) + N_{\text{turb}} (C_{\text{inv,turb}} + OPEX_{\text{Wind}})
 $$
-
-Where:
-
-- \( OPEX_{\text{PV}} = 5.64 \cdot \frac{P_{\text{STC}}}{1000} \cdot 10 \)
-- \( OPEX_{\text{Battery}} = 15.64 \cdot \frac{C_{\text{cell}}}{1000} \cdot 10 \)
-- \( OPEX_{\text{Wind}} = 32.2 \cdot \frac{P_{\text{turb}}}{1000} \cdot 10 \)
 
 ---
 
@@ -177,7 +159,10 @@ $$
 - Function Tolerance: \(10^{-12}\)  
 - Constraint Tolerance: \(10^{-3}\)
 
----
+The **genetic algorithm** (`ga()`) used to find the optimal configuration is as seen below:
+
+```matlab
+[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], options)
 
 
 The optimization model is implemented in MATLAB and follows these steps:
