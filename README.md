@@ -1,4 +1,4 @@
-# Optimization of Hybrid Solar-Wind Energy System for Hospital in London
+# Optimization of Hybrid Solar-Wind Energy System for a Hospital in London
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2024b-orange)](https://www.mathworks.com/products/matlab.html)
 
