@@ -156,17 +156,7 @@ By running `plottedfigures.py`, the following results were obtained:
 
 | **Figure** | **Description** |
 |------------|-----------------|
-| ![](SystemOperationpermonthinaTypicalYear.png)<br><br>**Fig 1**: System Operation per month in a Typical Year | key observations:
-
-PV Output: Peaks at 600 kW in summer, drops below 100 kW in winter.
-
-Wind Power: Remains stable at 50–150 kW, compensating for seasonal solar variations.
-
-Battery Storage: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging when demand exceeds supply.
-
-Exported Power: Ranges from 400–600 kW, with significant export in summer.
-
-Unsupplied Load: Remains close to zero, indicating the system is well-sized. |
+| ![](SystemOperationpermonthinaTypicalYear.jpg)<br><br>**Fig 1**: System Operation per month in a Typical Year | key observations: PV Output: Peaks at 600 kW in summer, drops below 100 kW in winter. wind Power: Remains stable at 50–150 kW, compensating for seasonal solar variations. Battery Storage: At 200 kW, it smooths fluctuations by charging during high generation periods and discharging when demand exceeds supply Exported Power: Ranges from 400–600 kW, with significant export in summer. Unsupplied Load: Remains close to zero, indicating the system is well-sized.|
 
 
 ## Steps to Run the Project
