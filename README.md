@@ -2,17 +2,6 @@
 
 This repository contains a MATLAB-based optimization project focused on designing a hybrid energy system for a hospital. The system integrates solar photovoltaics (PV), wind turbines, and battery storage, aimed at reducing energy costs and minimizing dependency on the grid while ensuring reliable energy supply for critical medical operations.
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Project Description](#project-description)
-3. [Data Sources and Files](#data-sources-and-files)
-4. [System Components](#system-components)
-5. [Optimization Methodology](#optimization-methodology)
-6. [Steps to Run the Project](#steps-to-run-the-project)
-7. [Results](#results)
-8. [License](#license)
-
 ## Introduction
 
 Hospitals are among the most energy-intensive facilities, requiring continuous and reliable power sources to support medical operations. This project develops an energy optimization model to design a hybrid solar-wind energy system for a hospital located in London, UK. By incorporating solar PV, wind turbines, and battery storage, the goal is to provide a self-sufficient energy system that minimizes grid dependency, reduces operational costs, and supports sustainability goals.
