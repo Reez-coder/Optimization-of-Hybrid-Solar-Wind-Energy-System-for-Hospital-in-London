@@ -149,6 +149,11 @@ The **genetic algorithm** (`ga()`) used to find the optimal configuration is as 
 
 $$[Xopt, cost] = ga(obj, 4, [], [], [], [], Xl, Xu, nlconstraints, [1 2 3], options)$$
 
+
+## Result and Analysis
+
+
+
 ## Steps to Run the Project
 The optimization model is implemented in MATLAB and follows these steps:
 1. **Input Data:** Load the hospital's energy load profile, solar irradiance, wind speed, and temperature data.
