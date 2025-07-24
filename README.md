@@ -98,17 +98,17 @@ $$
 ## Constraints
 ### **Lower and Upper Bounds**
 
-- The **lower bounds (`Xl`)** are:
-  $$
-  X_l = [ 1, N_{\text{cell,min}}, N_{\text{turb,min}}, SOC_{\text{ini,min}} ]
-  $$
+
+$$
+X_l = [1, \, N_{\text{cell,min}}, \, N_{\text{turb,min}}, \, SOC_{\text{ini,min}}]
+$$
 
 - The **upper bounds (`Xu`)** are:
-  $$
-  \begin{aligned}
-  X_u = [ N_{\text{pv,max}}, N_{\text{cell,max}}, N_{\text{turb,max}}, SOC_{\text{ini,max}} ]
-  \end{aligned}
-  $$
+
+$$
+X_u = [N_{\text{pv,max}}, \, N_{\text{cell,max}}, \, N_{\text{turb,max}}, \, SOC_{\text{ini,max}}]
+$$
+
   
 ### Inequality Constraints
 
