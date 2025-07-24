@@ -80,7 +80,7 @@ $$
 SOC(t+1) = SOC(t) + \frac{\eta_{\text{bat}} \cdot P_{\text{bat}}(t) \cdot \Delta T}{N_{\text{cell}} \cdot C_{\text{cell}}}
 $$
 
-### Power Output 
+## Power Output 
 
 $$
 P_{\text{total}} = \eta_{\text{DCDC}} \cdot P_{\text{PV}}(t) + \eta_{\text{ACDCw}} \cdot P_{\text{wind}}(t)
